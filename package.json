@@ -1,0 +1,41 @@
+{
+  "name": "dokploy-mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server for the Dokploy API — deploy and operate applications, compose stacks and databases from an AI agent",
+  "type": "module",
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "bin": {
+    "dokploy-mcp-server": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/index.js",
+    "dev": "tsc -p tsconfig.json --watch",
+    "clean": "rm -rf dist",
+    "test": "npm run build && node --test \"dist/test/*.test.js\"",
+    "sync-spec": "node dist/scripts/sync-spec.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "dokploy",
+    "devops",
+    "deployment"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  }
+}
